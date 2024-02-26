@@ -1,14 +1,13 @@
 import express from 'express';
-import { createListing, deleteListing, updateListing , getListing, getListings } from '../controllers/listing.controller.js';
-//import { verifyToken } from '../utils/verifyUser.js';
+import{ createList, getOneList, getAllListings , updateListing, deleteListing} from '../controllers/listing.controller.js'
 
 const router = express.Router();
 
-router.post('/createlist', createList);
-router.delete('/deletelist/:id', deleteList);
-router.post('/updatelist/:id', updateList);
-router.get('/getlist/:id', getList)
-router.get('/getalllst', getList);
 
+router.post('/createlist', createList);
+ router.get('/getlist/:id', getOneList);
+  router.get('/getalllist', getAllListings);
+ router.post('/updatelist/:id', updateListing);
+ router.delete('/deletelist/:id',deleteListing );
 export default router;
-  
+
