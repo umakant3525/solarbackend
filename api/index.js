@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import authRouter from './routes/auth.route.js';
 import adminRouter from './routes/admin.route.js'
+import userRouter from './routes/user.route.js'
 
 dotenv.config();
 const app = express();
@@ -27,7 +28,11 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRouter);
-app.use('/api/admin', adminRouter);
+ app.use('/api/admin', adminRouter);
+ app.use('/api/user', userRouter);
+ app.use('/api/list', listingRouter);
+
+
 
 app.use(function (err, req, res, next) {
     const statusCode  = res.statusCode || 500;

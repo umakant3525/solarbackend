@@ -1,10 +1,12 @@
 import express from 'express';
-import {updateAdmin} from '../controllers/admin.controller.js';
-import verifyToken from '../utils/verifyToken.js'
+import { deleteAdmin, getAdmin, getAllAdmin, updateAdmin } from '../controllers/admin.controller.js';
+//import { verifyToken } from '../utils/verifyUser.js';
 
 const router = express.Router();
 
-router.post('/updateadmin/:id', verifyToken, update)
-router.delete('/delete/:id', , deleteUser)
 
+router.get('/getalladmin', getAllAdmin)
+router.get('/getadmin/:id', getAdmin)
+router.post('/updateadmin/:id', updateAdmin)
+router.delete('/deleteadmin/:id', deleteAdmin)
 export default router;
